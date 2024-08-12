@@ -9,12 +9,17 @@ class SplashScreen extends StatelessWidget {
       backgroundColor: Color.fromRGBO(74, 63, 105, 1),
       body: Column(
         children: [
+          SizedBox(
+            height: 80,
+          ),
           //draw the chat bubble icon
           Expanded(
-            flex: 8,
-            child: CustomPaint(
-              size: const Size(150, 150),
-              //painter: ChatBubblePainter(),
+            flex: 11,
+            child: Image.asset(
+              'assets/images/splash.png',
+              fit: BoxFit.cover,
+              //width: 416,
+              //height: 416,
             ),
           ),
 
@@ -22,15 +27,15 @@ class SplashScreen extends StatelessWidget {
           const Expanded(
             flex: 5,
             child: Padding(
-              padding: EdgeInsets.only(left: 24, right: 24),
+              padding: EdgeInsets.only(right: 50),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Simpleliest',
+                    'Simpliest',
                     style: TextStyle(
                         fontSize: 40,
-                        fontWeight: FontWeight.bold,
+                        //fontWeight: FontWeight.bold,
                         color: Colors.white,
                         fontFamily: 'GDS Transport Website'),
                   ),
@@ -38,7 +43,7 @@ class SplashScreen extends StatelessWidget {
                     'Video Call and ',
                     style: TextStyle(
                         fontSize: 40,
-                        fontWeight: FontWeight.bold,
+                        //fontWeight: FontWeight.bold,
                         color: Colors.white,
                         fontFamily: 'GDS Transport Website'),
                   ),
@@ -46,7 +51,7 @@ class SplashScreen extends StatelessWidget {
                     'Messaging App ',
                     style: TextStyle(
                         fontSize: 40,
-                        fontWeight: FontWeight.bold,
+                        //fontWeight: FontWeight.bold,
                         color: Colors.white,
                         fontFamily: 'GDS Transport Website'),
                   ),
@@ -114,5 +119,3 @@ class SplashScreen extends StatelessWidget {
     );
   }
 }
-
-//class ChatBubblePainter extends CustomPainter {}
