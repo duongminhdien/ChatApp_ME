@@ -9,7 +9,7 @@ class SplashScreen extends StatelessWidget {
       backgroundColor: Color.fromRGBO(74, 63, 105, 1),
       body: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 80,
           ),
           //draw the chat bubble icon
