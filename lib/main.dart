@@ -1,6 +1,7 @@
 import 'package:chatapp_mentorme/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:chatapp_mentorme/messagelist.dart';
+import 'package:chatapp_mentorme/chatscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,6 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       //home: SplashScreen(),
       home: MessagesPage(),
+      //home: ChatScreen(),
     );
   }
 }

@@ -12,21 +12,65 @@ class MessagesPage extends StatelessWidget {
     Message('Jenny Wilson', 'wooooooo', '01:22', 0, 'assets/jenny.png'),
     Message(
         'Annette Black', 'How are you?', 'Mon, 22:23', 0, 'assets/annette.png'),
+    Message(
+        'Annette Black', 'How are you?', 'Mon, 22:23', 0, 'assets/annette.png'),
+    Message(
+        'Annette Black', 'How are you?', 'Mon, 22:23', 0, 'assets/annette.png'),
+    Message(
+        'Annette Black', 'How are you?', 'Mon, 22:23', 0, 'assets/annette.png'),
+    Message(
+        'Annette Black', 'How are you?', 'Mon, 22:23', 0, 'assets/annette.png'),
+    Message(
+        'Annette Black', 'How are you?', 'Mon, 22:23', 0, 'assets/annette.png'),
+    Message(
+        'Annette Black', 'How are you?', 'Mon, 22:23', 0, 'assets/annette.png'),
+    Message(
+        'Annette Black', 'How are you?', 'Mon, 22:23', 0, 'assets/annette.png'),
+    Message(
+        'Annette Black', 'How are you?', 'Mon, 22:23', 0, 'assets/annette.png'),
+    Message(
+        'Annette Black', 'How are you?', 'Mon, 22:23', 0, 'assets/annette.png'),
+    Message(
+        'Annette Black', 'How are you?', 'Mon, 22:23', 0, 'assets/annette.png'),
+    Message(
+        'Annette Black', 'How are you?', 'Mon, 22:23', 0, 'assets/annette.png'),
+    Message(
+        'Annette Black', 'How are you?', 'Mon, 22:23', 0, 'assets/annette.png'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Messages'),
-      ),
       backgroundColor: Colors.white,
-      //Display the message list
-      body: ListView.builder(
-        itemCount: messages.length,
-        itemBuilder: (context, index) {
-          return MessageCard(messages[index]);
-        },
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            //Dislay the text messages
+            padding: const EdgeInsets.only(left: 24, top: 48.0),
+            child: Text(
+              'Messages',
+              style: TextStyle(
+                fontSize: 40,
+                fontWeight: FontWeight.bold,
+                color: Color.fromRGBO(74, 63, 105, 1),
+              ),
+            ),
+          ),
+          //Display the list of messages with the MessageCard widget
+          Expanded(
+            child: Container(
+              color: Colors.white,
+              child: ListView.builder(
+                itemCount: messages.length,
+                itemBuilder: (context, index) {
+                  return MessageCard(messages[index]);
+                },
+              ),
+            ),
+          ),
+        ],
       ),
       //Floating action button to add a new message
       floatingActionButton: FloatingActionButton(
@@ -38,6 +82,8 @@ class MessagesPage extends StatelessWidget {
 
       //Bottom navigation bar with icons and labels
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
         items: const [
           BottomNavigationBarItem(
               icon: ImageIcon(AssetImage("assets/images/message.png")),
@@ -53,6 +99,7 @@ class MessagesPage extends StatelessWidget {
         ],
         selectedItemColor: Colors.deepPurple,
         unselectedItemColor: Colors.grey,
+        iconSize: 30,
       ),
     );
   }
@@ -70,7 +117,7 @@ class MessageCard extends StatelessWidget {
       //Avatar
       leading: CircleAvatar(
         backgroundImage: AssetImage(message.avatarUrl),
-        radius: 24,
+        radius: 30,
       ),
       //Message Username and Comment
       title: Text(
@@ -78,6 +125,7 @@ class MessageCard extends StatelessWidget {
         style: TextStyle(fontWeight: FontWeight.bold),
       ),
       subtitle: Text(message.lastMessage),
+      //time and new message notification
       trailing: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
